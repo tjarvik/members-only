@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <% if @current_user %> 
+      <%= link_to "sign out", logout_path, method: :delete %>
+    <% else %> 
+      <%= link_to "sign in", login_path %>
+    <% end %> 
+    <br>
     <%= yield %>
   </body>
 </html>

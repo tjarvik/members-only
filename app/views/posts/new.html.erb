@@ -1,0 +1,7 @@
+Tell all your juiciest gossip:
+
+<%= form_for(:post, url: posts_new_path) do |f| %>
+    The dirt is about: <%= f.text_field :title %><br>
+    And here is the dirt: <%= f.text_field :body %><br>
+    <%= f.submit "embarrass someone!" %>
+<% end %>

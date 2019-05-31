@@ -1,0 +1,13 @@
+<% Post.all.each do |p| %>
+    <h2><%= p.title %></h2><br>
+    Posted on <%= p.created_at %> by 
+    <% if @current_user %> 
+        <% user = User.find_by(id: p.user) %>
+        <%= user.username %>
+    <% else %> 
+        Don't you wish you knew!
+    <% end %> 
+    <br>
+    <p><%= p.body %></p>
+    <br>
+<% end %>
